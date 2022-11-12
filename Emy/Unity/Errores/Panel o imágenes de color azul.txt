@@ -1,0 +1,3 @@
+Te pasará más que nada con el las imágenes de los panels. Básicamente te tendrás que ir a la sección de "Image" del componente que quieres arreglar, e irte a la opción de "color", y luego modificas el valor del alpha (Lo que hace que se vea transparente), le pones valor de 255.
+
+Unity para representar la transparencia de una imagen lo que hace es que lo representa con un color azulito (Como alguna especie de blueprint).

@@ -1,0 +1,35 @@
+Lo primero que hay que hacer es dar click derecho en la jerarquía de clases (Donde dice SampleScene, o también la sección en la que dice "Hierarchy" abajito de la esquina superior izquierda).
+
+Una vez hecho eliges la opción de UI>>Canvas. Con eso ya habrás creado la el lienzo del MainMenu.
+
+///////////////////////////////////////////////////////////////////////////////////////////
+OPCIONES ÚTILES:
+
+(Para verlo deberás de seleccionar tu clase MainMenu)
+
+En las opciones de la sección "Canvas Scaler", viene una opción que se llama "UI Scale Mode", dicha opción te permite escalar el MainMenu atendiendo a ciertos criterios, para no batallar de preferencia coloca "Scale with the sreen size", eso hará que el HUD se escala dependiendo del tamaño de la ventana, y los componentes se moverán acorde al escalado.
+
+También en la misma sección hay una opción que se llama "Reference Resolution", esto practicamente definirá la pérdida o no de calidad de las imágenes de fondo.
+
+En la sección de "Canvas" viene una opción que se llama "Sort Order", esa opción te permite establecer una jerarquía de compoentes (Cuáles están encima de otros). Quien tenga el número menor, va atrás de todos aquellos componentes que tengan un número superior.
+///////////////////////////////////////////////////////////////////////////////////////////
+Para agregar una imagen al canvas, deberás de dar click derecho sobre el canvas>>UI>>Imagen, te aparecerá un cuadrito blanco, luego le podrás poner una imagen.
+///////////////////////////////////////////////////////////////////////////////////////////
+OPCIONES ÚTILES:
+
+El canvas por defecto viene anclado al centro. El anclaje es un punto de referencia dentro de un contenedor (como lo es el canvas), el cual se utilizará para definir la posición del componente. Para modificar esta opción tendrás que dar click al componente, en la sección de "Rect transform" deberás de buscar un cuadrado con un cuadrado dentro y una cruz, si le das click te despliega un menú en el que te permitirá la forma de anclaje. Lo recomendable sería que elijieras la primera opción para que funcione con la configuración de X y Y normales.
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+TRUQUILLOS:
+
+Si presionas Alt+Click al punto de anclaje, tu imagen se moverá justo hasta esa posición.
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+///////////////////////////////////////////////////////////////////////////////////////////
+Para agregar un panel deberás de dar click derecho al canvas>>UI>>Panel.
+
+Para asignarle una imagen al panel (En caso de que quieras poner algún fondo ya que al canvas no se le puede asignar una imagen de fondo), dentro de las opciones del panel, te irás al apartado de "Image", Y luego a la opción de Source Image. Para finalmente asignarlo, arrastras la imagen desde el panel de "Assets" o de sources al cuadrito de la opción "Source Image".
+
+*******************************************************************************************
+OPCIONES GENERALES:
+
+En un componente cualquier, ya sea canvas, panel o imagen, se le puede desactivar la visibilidad de imagen llendo a la sección de "Imagen" y despalomear dicha sección.

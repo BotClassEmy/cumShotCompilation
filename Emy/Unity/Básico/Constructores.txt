@@ -1,0 +1,3 @@
+En Unity no existen los constructores. Por lo tanto, para poder pasar datos a un script (como componentes, datos, etc.), deberás de declarar ciertas variables como públicas. Eso lo que hará es que dentro de la interfaz de Unity dichas variables sean visibles o que las puedas seleccionar y como son variables le puedes asignar valores.
+
+Lo mismo pasaría con los métodos.

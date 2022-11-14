@@ -1,0 +1,11 @@
+Necesitas de dos herramientas que se encuentran dentro de donde visualizas el cómo se verá tu juego, se llaman "Scale tool" y "Rect Tool". El primero sirve para escalar el contenido del componente, y el segundo son los margenes o los límites, lo que quiere decir que las cosas que estén dentro no podrán escalarse más allá de eso, o más bien el escalado depende del tamaño o la longitud de dichos margenes.
+
+Una vez ubicadas dichas opciones (deben de estar en el mismo sitio), vas a utilizar la herramienta "Rect tool", y lo que harás es modificar el tamaño de los margenes exageradamente. Lo ideal que tendrías que hacer es que antes de hacer lo anterior presiones "shift" para que la forma de los margenes se mantenga.
+
+Luego en el inspector del componente de texto, vas a aumentar el tamaño de texto igual que con los margenes (la opción se llama "Font size", el límite es de unos 300).
+
+Finalmente con la herramienta de "Scale tool", vas a reducir el tamaño de tu componente de texto al tamaño que tu deseas, normalmente el escalado no se ubicará justo en la posición que tu deseas, por lo que podrías utilizar la herramienta "Move tool" para mover el componente (Lo puedes mover con otras herramientas, pero con esa es menos probable que ocurran errores).
+
+Otra cosa a tomar en cuenta es el pivote (La "x" hecha con triángulos), para que no intefiera debes de seleccionar la parte donde debe de estar ubicado tu componente de texto (Normalmente será el componente padre en el que esté ubicado, o tendrás que asignarle arbitrariamente el área).
+
+Y ya con eso no presentarás ese problema.

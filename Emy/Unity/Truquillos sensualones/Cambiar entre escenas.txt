@@ -1,0 +1,18 @@
+Las escenas sirven para hacer cambios entre HUD, por ejemplo, no pondrás que en el mismo canvas del Lobby también sea el del juego. Sirven como para hacer cambios entre interfaces.
+
+Para poder hacerlo tienes que crear la escena en el apartado de "Scene", en tu carpeta de "Assets" (Create>>Scene). Esa escena para poder modificarla nada más tendrás que darle doble click cuando ya desees meterle cositas.
+
+Luego tendrás que cargar dicha escena en los archivos del proyecto o del "build", para eso te vas a "File" en la esquina superior izquierda, y File>>Build Settings. Una vez hecho esto la manera fácil de agregarlo es tener abierta la escena antes de darle a la opción "Add open Scene". De esta forma se te agrega sin que la tengas que buscar.
+
+Eso sería para que el juego pueda reconocer que exista otra escena.
+
+Ahora para poder cambiarla deberás de hacerlo mediante un script, para eso deberás de importar una librería de la siguiente manera:
+///////////////////////////////////////////
+using UnityEngine.SceneManagement;
+///////////////////////////////////////////
+Una vez importado llamarás a un método:
+///////////////////////////////////////////
+SceneManager.LoadScene("<Nombre del archivo de tu escena>");
+///////////////////////////////////////////
+En el parámetro colocarás el nombre de tu escena. Y ya con eso podrás cambiar entre escenas.
+

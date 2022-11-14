@@ -1,0 +1,7 @@
+Existen dos situaciones por las que no te deja agregar cierto script.
+
+El primero y principal es porque el nombre del archivo de tu script no concuerda con el nombre de clase dentro del código. Para solucionarlo debes de hacer que los dos concuerden.
+
+La otra situación es que otros scripts presenten el anterior problema, aunque tu script esté bien, los demás scripts que también estén mal no dejarán que puedas importar algunos scripts (algunos si podrás pero no sé el por qué).
+
+Esto ocurre porque cuando tu modificas el nombre del archivo no se cambia el nombre de la clase, entonces para siempre evitar este error deberás de cambiar el nombre del archivo y de la clase constantemente.

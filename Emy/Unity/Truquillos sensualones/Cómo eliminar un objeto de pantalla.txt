@@ -1,0 +1,1 @@
+Utilizas el "Destroy(GameObject)", en el parámetro colócas al objeto que deseas eliminar, si quieres que se elimine después de un tiempo utilizas "Destroy(GameObject, float)", donde float es el valor en segundos hasta que se elimine.

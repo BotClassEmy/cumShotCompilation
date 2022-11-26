@@ -1,0 +1,3 @@
+Básicamente debes de crear un canvas, dentro de dicho canvas colocarás la distribución del HUD. Ahora para hacer que el canvas se adapte a la cámara y que por supuesto también la siga, debes de darle click al canvas, luego te vas a la opción de "Render mode" y seleccionas la opción "Screen Space - Camera". Finalmente debes de seleccionar la cámara que quieres que traquee.
+
+De esa manera todos los objetos del canvas se moverán junto con la cámara, también se escalarán dependiendo del tamaño de la pantalla, pero para que se vea bien tendrás que buscar alguna configuración.

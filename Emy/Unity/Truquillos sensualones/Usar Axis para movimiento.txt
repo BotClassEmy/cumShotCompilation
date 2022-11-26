@@ -1,0 +1,50 @@
+Los axis van desde -1 a 1, y cuando se queda estático 0. Los axis toman en cuenta las teclas de movimiento, como "AWSD" y "<>^v" en teclado, o los joysticks en controles. Trabajar con axis es bueno para la compatibilidad en consolas y computadoras, y también te permite hacer animaciones más fluidas.
+
+Para poder manejarlo, debes de crear una variable pública de tipo "GameObject", y dentro del código pondrás lo siguiente (Lo siguiente tiene algunas limitantes, por ejemplo no es compatible con las físicas, el personaje si podrá colisionar contra objetos pero en determinadas circunstancias como objetos con mucha velocidad, podrán atravesar los objetos. La otra limitantes sería que solo es aplicable para objetos que no estén dentro de un contenedor, lo que ocurre cuando esto no es así es que los objetos se mueven a posiciones randoms):
+////////////////////////////////////////////////////////////////////////
+        float axisX = Input.GetAxis("Horizontal");
+        float axisY = Input.GetAxis("Vertical");
+        
+        <Nombre de tu GameObject>.transform.position = new Vector2(
+            transform.position.x + axisX * Time.deltaTime * velocidad,
+            transform.position.y + axisY * Time.deltaTime * velocidad);
+////////////////////////////////////////////////////////////////////////
+
+En Unity simplemente en el Script deberás pasarle tu GameObject que quieres desplazar con el axis.
+
+Ese es un método pero además es uno pocho, el verdadero que tienes que usar es el siguiente (Con pocho me refiero a que no es compatible con las físicas del juego, por lo que ocurren errores como a travezar objetos con velocidades muy altas y ese tipo de cosas. Cabe aclarar que si no existe un "Rigidbody 2D" no funcionará el método, además recuerda enlazarlo con tu script, por eso está público):
+//////////////////////////////////////////////////////////////////////////////////////////
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+
+public class MoveCharacter : MonoBehaviour
+{
+    [Header("Displacement")]
+    public float velocidad;
+    private Vector2 direccion;
+    private Rigidbody2D rb2D;
+    private float axisX;
+    private float axisY;
+
+    void Start(){
+        rb2D = GetComponent<Rigidbody2D>();
+
+    void FixedUpdate(){
+        rb2D.MovePosition(rb2D.position + direccion * velocidad * Time.fixedDeltaTime);
+    }
+
+    void Update()
+    {
+
+        float axisX = Input.GetAxis("Horizontal");
+        float axisY = Input.GetAxis("Vertical");
+
+        direccion = new Vector2(axisX, axisY).normalized;
+
+        
+    }
+//////////////////////////////////////////////////////////////////////////////////////////
+
+El anterior método si es compatible con las físicas de colisiones.

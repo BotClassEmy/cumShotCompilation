@@ -1,0 +1,12 @@
+
+    public SpriteRenderer sprite;
+
+    void Update()
+    {
+
+        sprite.flipX = true;
+        sprite.flipX = false;
+
+    }
+
+Con un valor true quiere decir que si se voltee (Si está a la derecha cambia a izquierda). Aquí lo importante es que le pases el Sprite Render de tu objeto que quieres voltear y listo, ya podrás voltear el objeto a tu antojo.

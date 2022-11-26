@@ -1,0 +1,5 @@
+El start básicamente ejecuta código cuando el componente es visible o entre en escena (El primer frame del componente).
+
+El Update se ejecuta cada vez que se cambia entre frames (Si el juego va a 60 fps, quiere decir que este método se ejecutará 60 veces por segundo).
+
+El Awake se ejecuta cada vez que se llame o se cargue el script, es decir que si tienes varios objetos que contengan a este script, se ejecutará por cada objeto que contenga este script (Es practicamente un constructor como el start, pero el start tiene que esperar a que el objeto entre en escena, y el awake cada vez que se utilice el script o se cargue, por lo que practicamente se ejecuta cuando se crea un GameObject que lo contenga).

@@ -1,0 +1,5 @@
+Las variables estáticas dentro de un script o por lo menos las "public static", sirven para que en otros scripts puedas llamarlas, poniendo el nombre del script y luego el nombre de la variable sentenciado como "public static". Aquí un ejemplo:
+////////////////////////////////
+public static Vector2 variable;
+////////////////////////////////
+Ayuda mucho cuando debes de comunicar scripts entre si, ya que no existe otra manera de comunicarlos, tendrás que crear scripts intermedios con variables sentenciadas de esa manera para poder comunicar al juego.

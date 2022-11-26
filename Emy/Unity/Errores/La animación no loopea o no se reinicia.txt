@@ -1,0 +1,1 @@
+Normalmente te ocurrirá cuando crees animaciones nuevas, lo que pasa es que por defecto cuando las creas no viene activado una opción que se llama "Loop Time", para activarla debes de seleccionar tu animación en tu carpeta de "Assets" y en el inspector ahí te debería de aparecer la opción, la activas y ahora si la animación entrará en loop.

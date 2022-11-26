@@ -1,0 +1,12 @@
+Usualmente es un error en el que haz referenciado o estás tratando de utilizar un objeto que no está inicializado.
+
+Pero si lees el error y te aparece algo así:
+
+NullReferenceException: Object reference not set to an instance of an object
+UnityEditor.Graphs.AnimationStateMachine.TransitionEditionContext.BuildNames () (at C:/buildslave/unity/build/Editor/Graphs/UnityEditor.Graphs/AnimationStateMachine/TransitionEditionContext.cs:44)
+UnityEditor.Graphs.AnimationStateMachine.TransitionEditionContext..ctor (UnityEditor.Animations.AnimatorTransitionBase aTransition, UnityEditor.Animations.AnimatorState aSourceState, UnityEditor.Animations.AnimatorStateMachine aSourceStateMachine, UnityEditor.Animations.AnimatorStateMachine aOwnerStateMachine) (at C:/buildslave/unity/build/Editor/Graphs/UnityEditor.Graphs/AnimationStateMachine/TransitionEditionContext.cs:28)
+UnityEditor.Graphs.AnimationStateMachine.AnimatorTransitionInspectorBase.ComputeTransitionContexts () (at C:/buildslave/unity/build/Editor/Graphs/UnityEditor.Graphs/AnimationStateMachine/AnimatorTransitionInspectorBase.cs:125)
+UnityEditor.Graphs.AnimationStateMachine.AnimatorTransitionInspectorBase.OnEnable () (at C:/buildslave/unity/build/Editor/Graphs/UnityEditor.Graphs/AnimationStateMachine/AnimatorTransitionInspectorBase.cs:87)
+UnityEditor.Graphs.AnimationStateMachine.AnimatorStateTransitionInspector.OnEnable () (at C:/buildslave/unity/build/Editor/Graphs/UnityEditor.Graphs/AnimationStateMachine/AnimatorStateTransitionInspector.cs:55)
+
+Lo más seguro es que sea un error del propio Unity, así que debes de reiniciar.

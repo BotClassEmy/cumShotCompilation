@@ -1,0 +1,21 @@
+public GameObject player;
+    Camera cam;
+    private Rigidbody2D rb2D;
+    private Vector2 dir;
+    [Header("Chase Options:")]
+    public float speed;
+
+    void Start(){
+        cam = Camera.main;
+        rb2D = GetComponent<Rigidbody2D>();
+    }
+    void FixedUpdate(){
+        rb2D.MovePosition(rb2D.position + dir * speed * Time.fixedDeltaTime);
+    }
+
+    void Update()
+    {
+        dir = new Vector2(player.transform.position.x - transform.position.x, player.transform.position.y - transform.position.y).normalized;
+    }
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+Aquí lo importante para hacer que tu objeto persiga a otro, tienes que cambiar el "player" por el objeto que deseas perseguir. y listo, ya podrás hacer que persigan a objetos pero será a una velocidad constante.

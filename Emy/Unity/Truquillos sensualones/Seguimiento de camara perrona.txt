@@ -1,0 +1,9 @@
+Lo primero que debes de hacer es agregar el paquete de CineMachine. Para eso te vas a la toolbar de Unity, das click en la opción "Window", luego "Package Manager". En la esquina superior derecha hay un buscador, prueba a poner "cinemachine", si no te aparece, entonces en la esquina superior izquierda, a un lado del "+", hay algo que dice "proyect", ahí te debes de asegurar de que esté seleccionado "Unity Registry". Una vez hecho eso vuelves a buscar y lo instalas.
+
+Una vez hecho eso, en la sección de "Hierarchy", vas a crear un "Cinemachine", de tipo "Virtual Camera". Automáticamente se seleccionará tu main camera. Para que siga a tu personaje debes de dar click a tu virtual camera anteriormente creada, buscar en el inspector una opción que diga "Follow" y ahí arrastras el objeto que quieres que siga tu virtual camera. Una vez hecho esto ya debería de funcionar el seguimiento de camera, pero puedes moverle a las configuraciones para hacer distintos tipos de seguimiento.
+
+Para movimientos 2D lo recomendado es usar la opción "Framing Transposer" del parámetro "Body". El parámetro "Dead Zone Width" (Y todas las que digan Dead Zone), sirven para establecer un área en el que tu personaje se podrá mover, sin que lo siga la cámara. Esta zona se ubica en el centro, donde también se supone que tendría que estar tu personaje.
+
+Los "Damping" de la sección "Body", son el tiempo de respuesta de la cámara para seguir al personaje, cuando este se sale del Dead Zone. Con un valor 0 es instantáneo, y valores alto tarda bastante más.
+
+El "Lookhead Time", es un movimiento de anticipación, lo que quiere decir que si tu personaje avanza la cámara se moverá en esa misma dirección, este parámetro define la distancia que se desplazará la predicción. "Lookhead Smoothing" es el tiempo que tardará en desplazarse dicha predicción de movimiento.

@@ -1,0 +1,19 @@
+Esto te servirá cuando tengas que conservar un valor o debas pasar parámetros entre escenas.
+
+Lo primero que tienes que hacer es crear un script del nombre que tu prefieras. Dentro del método colocarás lo siguiente:
+//////////////////////////////////////////////
+    <Colocar tus atributos que quieres conservar, los debes de poner como públicos y estáticos para poder llamar acceder a esos valores>
+    void Awake(){
+        DontDestroyOnLoad (gameObject);
+    }
+//////////////////////////////////////////////
+
+Lo que estás haciendo es conservar al componente al que le vas a colocar este script (OJO: con el método awake lo que haces es que cada vez que se cargue este script en cualquier componente, se ejecutará el método, y como no hay limitantes del "DontDestroyOnLoad" se conesrvarán múltiples gameObjects del mismo tipo, para evitar esto debes de encontrar la manera de que dicho método se ejecute una sola vez, podrías colocar un valor estático booleano para evitar este problema).
+
+Cuando se ejecuta el método "DontDestroyOnLoad" se crea un separador en la ventana "Hierarchy", que separa aquellos GameObjects que se conservarán cuando se cambie de escenas.
+
+Para poder modificar o consultar los valores de los objetos dentro de este script, deberás de colocar el nombre del script y finalmente el nombre de tu atributo, su estructura sería <Nombre del script>.<Nombre del atributo>. Un ejemplo sería:
+///////
+Save.x
+//////
+

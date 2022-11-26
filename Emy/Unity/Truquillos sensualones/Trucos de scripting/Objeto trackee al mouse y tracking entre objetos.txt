@@ -1,0 +1,30 @@
+    Camera cam;
+
+    void Start()
+    {
+        cam = Camera.main;
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        Vector2 dir = Input.mousePosition - cam.WorldToScreenPoint(transform.position);
+        float ang = Vector2.SignedAngle(Vector2.up, dir);
+        transform.rotation = (Quaternion.AngleAxis(ang, Vector3.forward));
+    }
+/////////////////////////////////////////////////////////////////////////////////////////
+
+El problema del anterior método es que está adaptado a solo el trackeo del mouse.
+
+Si intentas aplicarlo entre objetos deberás de considerar dónde estén contenido los objetos. Si están contenidos en el mismo contenedor, puedes obtar por usar solamente sus vectores con el "transform.localPosition" (Todo esto hablando de la variable dir). Aquí un ejemplo:
+/////////////////////////////////////////////////////////////////////////////////
+Vector2 dir = Object1.transform.localPosition - Object2.transform.localPosition;
+/////////////////////////////////////////////////////////////////////////////////
+Si los objetos que se tienen que trackear se encuentran en diferentes posiciones, entonces deberás de usar el "cam.WorldToScreenPoint(Vector2)", lo cual hace que tome las posiciones en pantalla de los objetos y no en layout. Aquí un ejemplo:
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+Vector2 dir = cam.WorldToScreenPoint(Object1.transform.position) - cam.WorldToScreenPoint(Object2.transform.position);
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+Toma en cuenta que no se está utilizando el "localPosition" si no el "position", ya que el local es la posición en el contenedor pero es necesario el del layout. Con lo anterior independientemente de dónde se encuentre el objeto siempre volteará a verlo.
+
+Una última cosa a tomar en cuenta es la variable "ang" donde dice "Vector2.up", ahí lo puedes cambiar por left, down, right, lo que quiere decir ese dato es qué parte de la imagen va a mirar al objeto, por ejemplo si el cañón de una pistola está al lado izquierdo de la imagen, te conviene en vez de "up" poner "left", así es como funciona.
+

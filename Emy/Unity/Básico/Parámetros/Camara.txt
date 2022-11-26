@@ -1,0 +1,1 @@
+El parámetro "Size", es la medida en pixeles desde el centro hasta el borde superior de la cámara.

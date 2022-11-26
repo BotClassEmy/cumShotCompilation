@@ -1,0 +1,1 @@
+Los Headers se utilizan para que en Unity, en el Inspector te aparezcan clasificaciones de los atributos públicos de tu script, también te sirve para tener los atributos bien organizados.

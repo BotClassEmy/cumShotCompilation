@@ -1,0 +1,5 @@
+Lo más seguro es que estés usando "transform.position", el problema de esto es que es una posición absoluta del juego, es decir, que si tu objeto está dentro de un contenedor la posición que tendrá es dada desde el contenedor y no del juego en sí, es por eso que se te va a una posición extraña.
+
+Lo que realmente deberías de usar cuando tu objeto está dentro de un contenedor es "transform.localPosition", eso si toma en cuenta al contenedor y con eso ya no tendrás ese problema.
+
+Cabe destacar que si tus sprites entre otras características no tienen una referencia (como el punto de origen del juego con las coordenadas 0,0,0) y utilizas la primera función a pesar de no estar contenido en un contenedor, pues también se te presentará ese problema.

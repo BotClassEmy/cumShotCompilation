@@ -1,0 +1,9 @@
+Existen dos posibles casos:
+
+La primera es que tengas la imagen colocada con un valor de alpha 0, lo cual quiere decir que es invisible.
+
+Si lo que quieres es que definitivamente se vean los "Sprites", deberás de asegurarte que la cámara vea a tu canvas, tanto en posición como en tamaño, de no ser así te aparecerá la pantalla en blanco, azul, o como lo tengas configurado (Cómo ve la cámara el fondo vacío). Para esto debes de modificar los parámetros de x, y y z de la cámara y adecuarlo a lo que quieres ver.
+
+La otra situación es que tu imagen sea extremadamente pequeña, para comprobarlo le das mucho zoom en el centro de tu imagen, y una vez que te des cuenta de ello simplemente lo escalas.
+
+Ya si te rindes podrías usar "Images", pero no es lo ortodoxo.

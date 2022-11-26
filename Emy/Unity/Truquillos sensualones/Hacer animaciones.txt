@@ -1,0 +1,50 @@
+Agarrate porque va a doler.
+
+CREAR ANIMACIONES:
+
+Lo primero a tomar en cuenta antes de aplicar las animaciones, es que los recursos que utilizarás deben de ser una imagen que contenga cada frame de la animación (si es un personaje lo recomendable sería que fuera en png sin fondo).
+
+Una vez tomado en cuenta eso ya tienes el material, ahora hay que preparar las herramientas.
+
+Lo primero que tienes que hacer es crear una carpeta llamada "Animation", donde pondrás todos los recurso de animación.
+
+Dentro de esa carpeta crearás un GameObject de tipo "Animation Controller". Luego, en el objeto al que le quieres aplicar una animación (Dicho objeto debe de contener "Image" y no "Sprites", porque si no, se verá invisible la animación), le agregas un componentes de tipo "Animator", a dicho componente en el apartado de "Controller", le pones el "Animation controller" que habías creado anteriormente.
+
+Con lo anterior ya podrás insertarle animaciones a tu objeto.
+
+Antes de comenzar con la división de las imágenes, deberás de colocarle ciertas características a tu imagen para que se pueda aplicar lo anterior. Lo primero es que en el "Inspector" (Todas las opciones que mencionaré a continuación están ahí), deberás de seleccionar una opción que dice "Sprite mode", lo deberás de colocar con un valor de "Multiple". Lo otro es "pixel per unit", le puedes asignar un valor de 16, no sé en qué pueda variar si le cambias a otro valor. Otra cosa es "Filter mode", lo deberás de colocar en "Point (no filter)". Y por último en "Compressión" lo colocarás en "High Quality". Ya con eso podrás hacer la división de las imágenes.
+
+Ahora para poder utilizar la imagen cruda que contiene las animaciones, deberás de seleccionar tu imagen, en el "inspector" buscarás una opción que diga "sprite editor". Dentro del Sprite Editor deberás de seleccionar todas las imágenes manualmente (Ya que la opción automática no me funcionó), cuando estés creando los sprites, te deberá de aparecer un cuadro de diálogo en la esquina inferior derecha en el que te permitirá asignarle un nombre al sprite. Los nombres de sprites son importantes por lo menos para el caso de las animaciones de "Personaje estático", para ese tipo de animación se le debe de colocar el nombre de "idle_<Número de idle>". Para otros tipos de animaciones tal vez exista otros nombres normalizados así que ten cuidado, lo bueno es que es fácil editar los nombres de los sprites, puesto que solo tienes que volver a entrar en el "Spirte editor", seleccionar el sprite en cuestión y cambiarle el nombre.
+
+Lo otro a tomar en cuenta cuando crees los sprites es que el cuadro verde y el azul deben de coincidir si no quieres que se "Buggee" el sprite (bordes blancos), y de preferencia que los bordes estén pegados a los últimos pixeles de la imagen. Finalmente le darás al botón de "Apply" en la esquina superior derecha del "Sprite Editor", y con eso ya crearás los minisprites para hacer animaciones.
+
+Finalmente para poder hacer la animación deberás de abrir 2 ventanas (una para poder crear más de una animación y la otra para crear la animación). En la barra de las opciones de Unity o la "Tool bar" (La parte de hasta arriba), deberás de dar click en el apartado de "Window", luego "Animation", y seleccionarás los dos primeros o si cambia "Animator" y "Animation". El Animator te sirve como para visualizar las aniamciones que tienes creadas, y el Animation sirve para crear las animaciones.
+
+Después, para agregar las imágenes o los mini sprites a la animación, deberás de seleccionar al objeto que quieres animar, luego seleccionas los mini sprites necesarios y los arrastras al panel de "Animation" (Donde se ponen las keys o la pista que se parece al de un editor de video). De ahí solo restaría que crear la animación a tu gusto y con los tiempos que veas oportunos.
+
+Para crear más de una animación en la ventana de "Animation" hay una opción donde viene el nombre de la animación, lo seleccionas, y le das a "Create new clip", asegúrate de seleccionar la dirección donde guardas tus animaciones.
+
+Si por algún casual del destino requieres de cambiar tu animación idle por otra, podrás hacerlo en la ventana de "Animator" seleccionando el blueprint de tu animación que quieres hacer tu idle, luego das click derecho y seleccionas "Set as layer default state". Y listo, ahora esa será tu animación que se iniciará cuando el componente sea visible.
+
+TRANSICIONES ENTRE ANIMACIONES:
+
+Las transiciones se refiere a aquellas condiciones por las cuales aquello que será animado pasará a otra animación. Para poder generar una transición deberás de seleccionar tu objeto con animaciones, e irte a la ventana de "Animator", en el te aparecerán todos los recuadros de las distintas animaciones que le agregaste a dicho objeto. Para poder señalar que de una animación (por ejemplo el idle) pase a otra (del idle a correr o "Run"), deberás de dar click derecho a la animación y darle a "Make transition", y luego seleccionar la animación a la que quieres cambiar. Es importante tomar en cuenta la animación de partida y la animación de transición, es decir, si tu quieres pasar del idle al run, deberás de dar click derecho al idle, y si quieres hacerlo del run al idle al revés. Es importante eso porque las transiciones son unilaterales, es decir que solo van en una sola dirección, por lo que si tu quieres pasar del idle al run y luego del run al idle, debes de crear dos transiciones tomando en cuenta los pasos para crear transiciones.
+
+Cuando trabajas en 2D, es importante que las transiciones entre animaciones sean instantaneas, por lo que tienes que modificar sus tiempos de demora (ya que vienen activados por defecto cuando creas una animación), así que debes de dar click a la transición (que son unas flechitas blancas). Dentro del inspector deberás de modificar 2 valores. El primero es "Has exit time", lo debes poner en false, y el otro es "Transition duration", le debes de poner un valor de "0". Con eso habrás hecho que tu transición sea instantanea. En caso de que no requieras esto, deberás de modificar esos parámetros a tu antojo (el "Has exit time", te inhabilita una opción que es a esa a la que me refiero), pero eso lo más seguro es que lo implementes en juegos 3D.
+
+Ahora lo interesante es crear las condiciones para cambiar entre transiciones. Se hace mediante variables. Para generar una variable en la toolbar de la ventana animator, seleccionas la estaña "parameters", habrán dos símbolos de "+-", el más te permite crear las variables, le das click y eliges el tipo de dato que deseas crear. Ahora, para crear las condiciones debes de emplear esas variables que luego las podrás modificar mediante un script, para eso debes de seleccionar la transición y le das al "+" en el apartado de "conditions". Ahí deberás de seleccionar alguna de las variables que habías creado y también qué condición o valor debe de tener para que ocurra la transición. Si creas más de una transición hacia el mismo sitio o la misma dirección te aparecerán en la parte de arriba en el apartado de "Transitions", y visualmente tu transición se verá con multiples flechitas (indicando multitransición). Eso te puede servir cuando debes de establecer condiciones independientes para el cambio de transición.
+
+Con todo lo anterior ya tendrás preparado la estructura de las transiciones, pero aún falta el cómo modificar los parámetros o variables que creaste y eso se hace mediante scripts. Dentro de tu script para poder modificar los parámetros deberás de crear una variable pública llamada "animation" de tipo "Animator". Para finalmente modificarlo deberás de poner lo siguiente: "animator.SetFloat("<Nombre de tu parámetro>", <Nuevo valor del parámetro>);". Aquí un ejemplo:
+//////////////////////////////////////////////
+public Animator animator;
+
+    void Update()
+    {
+
+        animator.SetFloat("Horizontal", 0);
+    }
+//////////////////////////////////////////////
+
+Dependiendo del tipo de dato, el método se llamará de distinta forma, por ejemplo: "SetBool", "SetInt", etc. (si es que hay algo más).
+
+Y ya con eso podrás crear transiciones con distintas condiciones. Incluso mediante el script puedes crear condiciones más complejas con bools, o con los triggers pero eso aún no lo sé usar.

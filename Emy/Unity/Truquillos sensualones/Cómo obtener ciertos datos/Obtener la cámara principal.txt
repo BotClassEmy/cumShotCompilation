@@ -1,0 +1,6 @@
+    Camera cam;
+
+    void Start()
+    {
+        cam = Camera.main;
+    }

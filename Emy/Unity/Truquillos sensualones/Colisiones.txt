@@ -1,0 +1,45 @@
+Para que las colisiones funcionen correctamente, debes de asegurarte de que tu personaje o todo aquello que se mueva tenga bien implementado la función de movimiento, ya que si no se pueden presentar ciertos errores como un temblor cuando intentas atrevezar un objeto o directamente atravesarlo todo esto dependiendo de qué tan veloz sea el objeto. Cabe aclarar que para que el método de movimiento funcione dentro de tu objeto que se mueve debe de contener un "Rigidbody 2D", de lo contrario no se moverá.
+
+Lo primero que tienes que hacer es que a cada objeto que quieras que este colisione, debes de agregarle un "Box Collider 2D", solo con esto ya podrán colsionar sin que tengas que modificar nada.
+
+BOX COLIDER PARAMETERS:
+
+Edit Collider (Icono que parece un mapa conceptual): En tu objeto se creará un cuadro el cual es el detector de colisión, puedes modificar su tamaño a tu antojo, dicho cuadro se moverá junto con tu personaje.
+
+Is Trigger: Is Trigger hace que tu box collider se convierta en solo un área por donde pueden pasar los objetos, pero sigue detectando cuándo lo hacen, se puede utilizar cuando quieres hacer checkpoints y ese tipo de cosas. Una cosa que cabe aclarar es que cuando se activa esta función los métodos "OnCollision" dejan de funcionar, dichos métodos se reemplazan por otros que funcionan igual que son:
+
+OnTriggerEnter2D
+OnTriggerExit2D
+OnTriggerStay2D
+
+Los métodos que desactiva son:
+
+OnCollisionEnter2D
+OnCollisionExit2D
+OnCollisionStay2D
+
+Edge Radius: Esto le agrega curvas a los bordes de tu colisionador, puedes incluso hacer un círculo si colócas un valor alto.
+
+Offset: son los valores de x y y.
+
+Size: Es el tamaño del colisionador, aunque es mejor modificarlo con el "Edit Collider".
+
+Sin embargo si quieres que tu personaje tenga ciertas características especiales, como que tenga gravedad, que pueda rotar, peso, entre otras cosas, debes de agregar un objeto conocido como "Rigidbody 2D" a tu componente que quieres que se mueva dinámicamente.
+
+RIGIDBODY PARAMETERS:
+
+Body Type: El body type sirve para agregarle o quitarle características dependiendo del tipo de objeto que deseas, por ejemplo si es "Dynamic" puedes agregarle efectos como gravedad y rotación dinámicos. si es "Kinematic" omitiarás esos efectos, y si es "Static", no podrás seleccionar el tipo de colisión y otros parámetros, dependiendo de lo que uses alternarás entre esas opciones.
+
+Simulated: Inhabilita al Rigidbody.
+
+Use automass: Esto te selecciona una masa automáticamente, la masa es para empujar objetos y por supuesto qué tanto los desplazas, la masa depende del tamaño del objeto.
+
+Mass: Aquí selecionas arbitrariamente la masa del objeto.
+
+Drags: Se supone que afectan cuando colisionas con un objeto, pero no tengo ni idea para qué sirva, ni con valor bajo u alto noto diferencia.
+
+Gravity Scale: Agrega gravedad al objeto.
+
+Collision Detection: Hace que los objetos colisionen de manera suave o seco, si está en "continuous" se hace de manera seca y "discret" suave.
+
+Constraints: Los valores constraint cuando están en true, bloquean los ejes cuando se produzca una colisión, por ejemplo si bloqueas la z, el objeto no girará cuando sea golpeado, si bloqueas las posiciones podrás atravesar los objetos.
